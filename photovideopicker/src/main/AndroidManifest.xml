@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.ajit.photovideopicker">
+
+    <uses-sdk tools:overrideLibrary="androidx.camera.view, androidx.camera:camera-camera2, androidx.camera.camera2,androidx.camera.lifecycle, androidx.camera.core"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES"/>
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO"/>
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO"/>
+    <application>
+        <provider android:name=".PictureFileProvider" android:authorities="${applicationId}.provider" android:exported="false" android:grantUriPermissions="true">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_paths"/>
+        </provider>
+
+        <activity android:name=".PictureSelectorActivity" android:exported="true" android:configChanges="orientation|keyboardHidden|screenSize"/>
+        <activity android:name=".instagram.PictureSelectorInstagramStyleActivity" android:configChanges="orientation|keyboardHidden|screenSize"/>
+        <activity android:name=".instagram.process.InstagramMediaProcessActivity" android:exported="true" android:configChanges="orientation|keyboardHidden|screenSize"/>
+        <activity android:name=".PictureSelectorWeChatStyleActivity" android:exported="true" android:configChanges="orientation|keyboardHidden|screenSize"/>
+        <activity android:name=".PictureSelectorCameraEmptyActivity" android:exported="true" android:configChanges="orientation|keyboardHidden|screenSize" android:theme="@style/Picture.Theme.Translucent"/>
+        <activity android:name=".PictureCustomCameraActivity" android:exported="true" android:configChanges="orientation|keyboardHidden|screenSize"/>
+        <activity android:name=".PicturePreviewActivity" android:exported="true" android:configChanges="orientation|keyboardHidden|screenSize"/>
+        <activity android:name=".PictureSelectorPreviewWeChatStyleActivity" android:exported="true" android:configChanges="orientation|keyboardHidden|screenSize"/>
+        <activity android:name=".PictureVideoPlayActivity" android:exported="true" android:configChanges="orientation|keyboardHidden|screenSize" android:screenOrientation="sensor"/>
+        <activity android:name=".PictureExternalPreviewActivity" android:exported="true" android:configChanges="orientation|keyboardHidden|screenSize"/>
+        <activity android:name=".PicturePlayAudioActivity" android:exported="true" android:configChanges="orientation|keyboardHidden|screenSize"/>
+
+        <activity android:name="com.ajit.ucrop.UCropActivity" android:exported="true" android:theme="@style/Base.Theme.NoActionBar"/>
+        <activity android:name="com.ajit.ucrop.PictureMultiCuttingActivity" android:exported="true" android:theme="@style/Base.Theme.NoActionBar"/>
+    </application>
+
+</manifest>

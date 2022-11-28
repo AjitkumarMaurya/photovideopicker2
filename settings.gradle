@@ -1,0 +1,4 @@
+rootProject.name = "photovideopicker"
+include ':app'
+include ':photovideopicker'
+include ':ucrop'
